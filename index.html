@@ -51,14 +51,14 @@
            
             <div id="home" class="current">
                 <div class="toolbar">
-                    <h1>Clase 5</h1>
+                    <h1>Clase 6</h1>
                     <a class="button slideup" id="infoButton" href="#about">Info</a>
                 </div>
                 <div class="scroll">
                     <ul class="rounded">
-                        <li class="arrow"><a href="#brujula">Brújula <small class="counter">1</small></a> </li>
-                        <li class="arrow"><a href="#acelerometro">Acelerómetro <small class="counter">3</small></a></li>
-                        <li class="arrow"><a href="#global">Globalización <small class="counter">1</small></a></li>
+                        <li class="arrow"><a href="#contactos">Contactos<small class="counter">1</small></a> </li>
+                        <li class="arrow"><a href="#archivos">Archivos <small class="counter">3</small></a></li>
+                        <li class="arrow"><a href="#navegador">Navegador<small class="counter">1</small></a></li>
                     </ul>
                     
                     <div class="info">
@@ -66,86 +66,63 @@
                     </div>
                 </div>
             </div>
-            <div id="brujula">
+            <div id="contactos">
                 <div class="toolbar">
-                    <h1>Brújula</h1>
+                    <h1>Contactos</h1>
                     <a href="#" class="back">Atrás</a>
+                    <a id="cAdd" href="#newContacto" style="font-size=18px;" class="button slideup">+</a>
                 </div>
                 <div class="scroll">
-                	<ul class="individual">
-                        <li id="bInc"><a href="#">Iniciar</a></li>
-                        <li id="bDtn"><a href="#">Detener</a></li>
+                	<ul class="plastic">
+                        <li></li>
                     </ul>
-                    <div id="bRes" style="text-align:center;">
-                    	0.000
-                    </div>
+                  
                 </div>
             </div>
-            <div id="acelerometro">
+             <div id="newContacto">
                 <div class="toolbar">
-                    <h1>Acelerometro</h1>
-                    <a class="back" href="#">Events</a>
+                    <h1>Contactos</h1>
+                    <a href="#" class="back">Cancelar</a>
+                    
+                </div>
+                <div class="scroll">
+                	<ul class="plastic">
+                        <li><input type="text" placeholder="Nombre" id="cNomb"></li>
+                         <li><input type="tel" placeholder="Teléfono" id="cTel"></li>
+                          <li><input type="tel" placeholder="Movil" id="cMov"></li>
+                           <li><input type="email" placeholder="E-Mail" id="cMail"></li>
+                           <li><a href="#" id="cSend" style="background: #090; color:#fff; text-align: center;">Crear Contacto</a></li></ul>
+                  
+                </div>
+            </div>
+            <div id="archivos">
+                <div class="toolbar">
+                    <h1>Archivos</h1>
+                    <a class="back" href="#">Atras</a>
                 </div>
                 <div class="scroll" style="font-weight: normal;">
+                <ul class="plastic">
+                <li><textarea id="aText"></textarea></li>
+                </ul>
+                
                 	<ul class="individual">
-                        <li id="aInc"><a href="#">Iniciar</a></li>
-                        <li id="aDtn"><a href="#">Detener</a></li>
+                    <li id="aCrear"><a href="#">Crear</a></li>
+                    <li id="aLeer"><a href="#">Leer</a></li>
+                       
                     </ul>
-                    <div id="aRes" style="text-align:center;">
-                    	0.000
-                    </div>
+                  
                 </div>
             </div>
-            <div id="global">
+            <div id="navegador">
                 <div class="toolbar">
-                    <h1>Globalización</h1>
+                    <h1>Navegador</h1>
                     <a href="#" class="back">Back</a>
                 </div>
                 <ul class="scroll">
                   
-                    <li id="gRES"></li>
+               
                 </ul>
             </div>
-            <div id="ui">
-                <div class="toolbar">
-                    <h1>UI Demos</h1>
-                    <a class="back" href="#">Home</a>
-                </div>
-                <div class="scroll">
-                    <h2>Lists</h2>
-                    <ul class="rounded">
-                        <li class="arrow"><a href="#edge">Edge to Edge</a></li>
-                        <li class="arrow"><a href="#plastic">Plastic</a></li>
-                        <li class="arrow"><a href="#metal">Metal</a></li>
-                    </ul>
-                    <h2>Buttons</h2>
-                    <ul class="rounded">
-                        <li class="arrow"><a href="#buttons">Buttons</a></li>
-                    </ul>
-                    <h2>Forms</h2>
-                    <ul class="rounded">
-                        <li class="arrow"><a href="#forms">Forms</a></li>
-                    </ul>
-                </div>
-            </div>
-            <form id="ajax_post" action="ajax_post.php" method="POST" class="form">
-                <div class="toolbar">
-                    <h1>Post Demo</h1>
-                    <a class="back" href="#">Ajax</a>
-                </div>
-                <div class="scroll">
-                    <ul class="rounded">
-                        <li><input type="text" name="zip" value="" placeholder="Zip Code" /></li>
-                    </ul>
-                    <h2>Favorite color?</h2>
-                    <ul class="rounded">
-                        <li><input type="radio" name="color" value="green" title="Green" /></li>
-                        <li><input type="radio" name="color" value="blue" title="Blue" /></li>
-                        <li><input type="radio" name="color" value="red" title="Red" /></li>
-                    </ul>
-                    <a style="margin-top: 10px; margin-bottom: 10px; color:rgba(0,0,0,.9)" href="#" class="submit whiteButton">Submit</a>
-                </div>
-            </form>
-        </div>
+            
     </body>
 </html>

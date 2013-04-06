@@ -1,48 +1,45 @@
 $(document).ready(function(e) {
     document.addEventListener("deviceready", function(){
-		//Brújula
-		var watchID = null;
-		$('#bInc').tap(function(){
-			watchID = navigator.compass.watchHeading(function(heading){
-				$('#bRes').text(heading.magneticHeading);
-			}, function(compassError){
-					alert('Compass error: ' + compassError.code);
-			}, { frequency: 500 });
-		});
-		$('#bDtn').tap(function(){
-			navigator.compass.clearWatch(watchID);
-			watchID = null;
-			$('#bRes').text('0.000');
-		});
+		$('cSend').tap(function(){
+		var nom = $('#cNom').val();
+		var tel = $('#cTel').val();
+		var mov = $('#cMov').val();
+		var mail = $('#cMail').val();
 		
-		//Acelerometro
+		//
+		var nueCont = navigator.contacts.create();
 		
-		var awatchID = null;
-				$('#aInc').tap(function(){
-			awatchID = navigator.accelerometer.watchAcceleration(function(acceleration){
-				$('#aRES').html('Acceleration X: ' + acceleration.x + '<br />' +
-                            'Acceleration Y: ' + acceleration.y + '<br />' +
-                            'Acceleration Z: ' + acceleration.z + '<br />' + 
-                            'Timestamp: '      + acceleration.timestamp + '<br />'
-);
-			}, function(accError){
-					alert('Acelerometro error: ' + accError.code);
-			}, { frequency: 500 });
-		});
-		$('#aDtn').tap(function(){
-			navigator.accelerometer.clearWatch(awatchID);
-			awatchID = null;
-			$('#aRes').text('Detenido');
-		});
+		nueCont.displayName = nom;
+		nueCont.nickname = nom;
 		
-		//Globalizacion
-		navigator.globalization.getPreferredLanguage(
-  function (language) {
-	  $('#gRes').text(language.value);
-	  },
-  function () {alert('Error getting language\n');}
-);
+		// crear objeto de nombre contacto
+		var nombre = new ContactName();
+		nombre.giveName = nom;
+		nueCont.name = nombre;
+		
+		var telefonos = [];
+		telefonos[0] = new ContactField('home', tel, false);
+        telefonos[1] = new ContactField('mobile', mov, true); // preferred number
+        nueCont.phoneNumbers = telefonos;
+		
+		
+		var correos = [];
+		correos[0] = new ContactField('home', mail, false);
+		nueCont.emails = correos;
+		
+		
+		nueCont.save(function(){
+			$('#cNom, #cTel, #cMov, #cMail').val('');
+			navigator.notification.alert('Creao satisfactoriamente',null,'Contactos','Aceptar');
+			},function(){
+			navigator.notification.alert(err.code,null,'Error al crear Contacto','Aceptar');
+			}
+		
+		);
 
+			
+			
+		});
 		
 		
 		
