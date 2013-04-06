@@ -1,6 +1,6 @@
 $(document).ready(function(e) {
     document.addEventListener("deviceready", function(){
-		$('cSend').tap(function(){
+		$('#cSend').tap(function(){
 		var nom = $('#cNom').val();
 		var tel = $('#cTel').val();
 		var mov = $('#cMov').val();
