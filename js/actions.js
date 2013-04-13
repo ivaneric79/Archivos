@@ -59,6 +59,7 @@ $(document).ready(function(e) {
 		//Archivos
 		// crear o escribr archivos
 		$('#aCrear').tap(function() {
+			alert('tapcrear');
 			window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(localSystem) {
 
 				localSystem.root.getFile("readme.txt", {
@@ -72,6 +73,7 @@ $(document).ready(function(e) {
 							}, "Archivos", "Aceptar");
 						}
 						escritor.write($('#aText').val());
+						alert($('#aText').val());
 
 					}, function(err) {
 						alert(err.code);
