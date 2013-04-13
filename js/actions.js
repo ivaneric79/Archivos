@@ -59,7 +59,7 @@ $(document).ready(function(e) {
 		//Archivos
 		// crear o escribr archivos
 		$('#aCrear').tap(function() {
-			alert('tapcrear');
+			
 			window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(localSystem) {
 
 				localSystem.root.getFile("readme.txt", {
@@ -73,7 +73,7 @@ $(document).ready(function(e) {
 							}, "Archivos", "Aceptar");
 						};
 						escritor.write($('#aText').val());
-						alert($('#aText').val());
+						
 
 					}, function(err) {
 						alert(err.code);
@@ -112,6 +112,13 @@ $(document).ready(function(e) {
 			});
 
 		});
+		
+   var ref = window.open('http://apache.org', '_blank', 'location=yes');
+         ref.addEventListener('loadstart', function() { alert('start: ' + event.url); });
+         ref.addEventListener('loadstop', function() { alert('stop: ' + event.url); });
+         ref.addEventListener('exit', function() { alert(event.type); });
+		
+		
 
 	}, false);
 });
