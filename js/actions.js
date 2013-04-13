@@ -113,8 +113,8 @@ $(document).ready(function(e) {
 
 		});
 		
-  // var ref = window.open('http://apache.org', '_self', 'location=no');
-  $("#info").html(window.open('http://apache.org', '_self', 'location=no'));
+  var ref = window.open('http://apache.org', '_self', 'location=no');
+
        //  ref.addEventListener('loadstart', function() { alert('start: ' + event.url); });
        //  ref.addEventListener('loadstop', function() { alert('stop: ' + event.url); });
       //   ref.addEventListener('exit', function() { alert(event.type); });
