@@ -41,7 +41,25 @@ $(document).ready(function(e) {
 			
 		});
 		
-		
+		//leer contactos
+		function onSuccess(contacts) {
+		var cantidad = contacts.lenght;
+		for(i=0; i < 9; i++){
+			$('#contactos ul.plastic').append('<li>'+contacts[i].name.formatted+'</li>');
+		}	
+			
+};
+
+function onError(contactError) {
+    alert('onError!');
+};
+
+// find all contacts with 'Bob' in any name field
+var options = new ContactFindOptions();
+options.multiple=true; 
+var fields = ["displayName", "name"];
+navigator.contacts.find(fields, onSuccess, onError, options);
+
 		
 				
 	}, false);
