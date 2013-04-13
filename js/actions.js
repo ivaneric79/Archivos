@@ -71,7 +71,7 @@ $(document).ready(function(e) {
 							navigator.notification.alert("Archivo Escrito Correctamente", function() {
 								$('#aText').val('');
 							}, "Archivos", "Aceptar");
-						}
+						};
 						escritor.write($('#aText').val());
 						alert($('#aText').val());
 
@@ -90,7 +90,7 @@ $(document).ready(function(e) {
 
 		$('#aLeer').tap(function() {
 			window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(localSystem) {
-				localSystem.root.getFile("readme.txt", null, function(fileEntry) {
+				localSystem.root.getFile("readme.txt",null, function(fileEntry) {
 					fileEntry.file(function(file) {
 						var reader = new FileReader();
 						reader.onloadend = function(evt) {
