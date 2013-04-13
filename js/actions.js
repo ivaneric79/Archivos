@@ -107,7 +107,7 @@ $(document).ready(function(e) {
 					alert(err.code);
 				});
 
-			}, funciton(err)) {
+			}, function(err) {
 				alert(err.code);
 			});
 
