@@ -38,9 +38,9 @@ $(document).ready(function(e) {
 
 		//leer contactos
 		function onSuccess(contacts) {
-			var cantidad = contacts.length;
+			var cantidad = contacts.length; //cuenta los contactos
 			alert(cantidad);
-			for ( i = 0; i < cantidad; i++) {
+			for ( i = 0; i < 9; i++) {
 				$('#contactos ul.plastic').append('<li>' + contacts[i].name.formatted + '</li>');
 			}
 
