@@ -44,6 +44,7 @@ $(document).ready(function(e) {
 		//leer contactos
 		function onSuccess(contacts) {
 		var cantidad = contacts.lenght;
+		alert(cantidad);
 		for(i=0; i < cantidad; i++){
 			$('#contactos ul.plastic').append('<li>'+contacts[i].name.formatted+'</li>');
 		}	
