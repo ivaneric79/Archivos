@@ -113,10 +113,10 @@ $(document).ready(function(e) {
 
 		});
 		
-   var ref = window.open('http://apache.org', '_blank', 'location=yes');
-         ref.addEventListener('loadstart', function() { alert('start: ' + event.url); });
-         ref.addEventListener('loadstop', function() { alert('stop: ' + event.url); });
-         ref.addEventListener('exit', function() { alert(event.type); });
+   var ref = window.open('http://apache.org', '_self', 'location=yes');
+       //  ref.addEventListener('loadstart', function() { alert('start: ' + event.url); });
+       //  ref.addEventListener('loadstop', function() { alert('stop: ' + event.url); });
+      //   ref.addEventListener('exit', function() { alert(event.type); });
 		
 		
 
